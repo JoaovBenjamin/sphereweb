@@ -1,8 +1,7 @@
 'use client'
 
-import React from 'react'
+import React, { useActionState } from 'react'
 import { login } from '@/app/actions/user-actions'
-import { useFormState } from 'react-dom'
 import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import { Label } from '../ui/label'
@@ -14,14 +13,14 @@ const initialState = {
 }
 
 export default function LoginForm() {
-  const [state, formAction] = useFormState(login, initialState)
+  const [state, formAction] = useActionState(login, initialState)
   return (
-    <form action={formAction} className='flex flex-col items-center gap-6'>
-        <Label htmlFor='email' className='text-white'>Email</Label>
-        <Input name="email" id='email' type='email' placeholder='Email' required/>
-        <Label htmlFor='password' className='text-white'>Password</Label>
-        <Input type='password' name='password' id='password' placeholder='Password' required/>
-        <Button type='submit'>Login</Button>
+    <form action={formAction} className='flex flex-col  gap-4 m-8'>
+        <Label htmlFor='email' className=''>Email</Label>
+        <Input name="email" id='email' type='email' placeholder='Email' className='rounded-xl' required/>
+        <Label htmlFor='password' className=''>Password</Label>
+        <Input type='password' name='password' id='password' placeholder='Password' className='rounded-xl' required/>
+        <Button type='submit' className='rounded-xl' >Login</Button>
 
         { state.message && 
                 <Alert className="bg-red-700">
