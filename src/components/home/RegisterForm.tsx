@@ -20,7 +20,7 @@ const initialState = {
 export default function RegisterForm() {
     const [state, formAction] = useActionState(register, initialState)
   return (
-    <form action={formAction} className='flex flex-col gap-4 m-8'>
+    <form action={formAction} className='flex flex-col gap-2 m-2'>
         <Label htmlFor='name' className=''>Name</Label>
         <Input name="name" id='name' type='text' placeholder='Name' className='rounded-xl' required/>
         <Label htmlFor='bio' className=''>Bio</Label>
@@ -29,9 +29,9 @@ export default function RegisterForm() {
         <Input name="email" id='email' type='email' placeholder='Email' className='rounded-xl' required/>
         <Label htmlFor='password' className=''>Password</Label>
         <Input type='password' name='password' id='password' placeholder='Password' className='rounded-xl' required/>
-        <Button type='submit' className='rounded-xl' >Criar Conta</Button>
+        <Button type='submit' className='rounded-xl' >Register</Button>
         {
-            state?.success &&
+            state?.success === true &&
             <Alert className="bg-green-700">
                 <CheckIcon className="w-6 h-6" />
                 <AlertTitle>Conta criada com sucesso</AlertTitle>
