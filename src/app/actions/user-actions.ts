@@ -74,3 +74,8 @@ export async function login(prevState: any,formData: FormData) {
     }
 
 }
+
+export async function logout() {
+     (await cookies()).delete('token');
+     redirect('/')
+}   
