@@ -5,7 +5,7 @@ import { redirect } from "next/navigation"
 
 export async function createPost(formData: FormData){
     const post = {
-        content: formData.get("content"),
+        text: formData.get("text"),
     }
 
     const response = await fetch("http://localhost:8080/posts", {

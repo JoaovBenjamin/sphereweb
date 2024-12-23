@@ -14,7 +14,7 @@ export default function FormPost() {
     <>
         <form action={handleSubmit} className='flex items-end gap-2'>
             <div className='flex-grow'>
-                <Textarea name='content' placeholder='O que você está pensando?' />
+                <Textarea name='text' id='text' placeholder='O que você está pensando?' />
             </div>
             <Button type='submit'>Postar</Button>
         </form>
