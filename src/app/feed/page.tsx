@@ -15,7 +15,7 @@ export default async function Home() {
         <main className='flex min-h-screen justify-center relative'>
           <NavBar/>
           <Tabs active="feed"/>
-          <section className="flex flex-col gap-4 min-h-screen min-w-[600px] m-x-8 p-8 ligth:bg-gray-100 bg-gray-900">
+          <section className="flex flex-col gap-4 w-full min-w-[600px]  p-8 ligth:bg-gray-100 bg-gray-900">
               <h2>Feed</h2>   
               <FormPost/>
               <Feed initialPosts={posts} />

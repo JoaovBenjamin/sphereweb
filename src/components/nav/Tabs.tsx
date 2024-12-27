@@ -9,7 +9,7 @@ interface TabProps {
 export default function Tabs({active}: TabProps) {
   return (
     <>
-         <nav className="flex flex-col gap-4 items-center space-x-2 ligth:bg-gray-100 bg-gray-900 p-4 mx-2">
+         <nav className="flex flex-col gap-4 items-center min-w-min ligth:bg-gray-100 bg-gray-900 p-4 mx-2">
             <div className="size-8 bg-red-600 rounded-full"></div>
             <Link href="/feed" className={active == "feed" ? "text-red-600" : "" }>
                 <HomeIcon className="size-6"/>
