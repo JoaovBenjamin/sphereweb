@@ -3,11 +3,12 @@
 import { getPost } from "@/app/actions/post-actions" 
 import { Post } from "@/components/post/post"
 import { Button } from "@/components/ui/button"
+import { PostType } from "@/types/Post"
 import { Suspense, useEffect, useState } from "react"
 
-export function Feed({initialPosts}: {initialPosts: Post[]}){
+export function Feed({initialPosts}: {initialPosts: PostType[]}){
 
-    const [posts, setPosts] = useState<Post[]>([])
+    const [posts, setPosts] = useState<PostType[]>([])
     const [page, setPage] = useState(0)
 
     useEffect(() => {
@@ -22,7 +23,7 @@ export function Feed({initialPosts}: {initialPosts: Post[]}){
 
     return (
         <Suspense fallback={<p>carregando</p>}>
-            {posts?.map((post: Post) => <Post key={post.id} post={post} /> )}
+            {posts?.map((post: PostType) => <Post key={post.id} post={post} /> )}
             <Button onClick={loadMore}>carregar mais</Button>
         </Suspense>
     )

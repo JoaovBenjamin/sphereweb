@@ -1,5 +1,6 @@
 "use server"
 
+import { UserType } from "@/types/User"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 
@@ -73,6 +74,28 @@ export async function login(prevState: any,formData: FormData) {
         password: '',
     }
 
+}
+
+export async function searchUsers(name : string) {
+    const response = await fetch(`http://localhost:8080/user?name=${name}`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${(await cookies()).get('token')?.value}`
+        },
+})
+
+    if (response.status === 403) {
+        redirect('/')
+    } 
+
+    const json = await response.json()
+    return json.map((user : UserType) => {
+        return {
+            name: user.name,
+            bio: user.bio,
+            avatar: user.avatar,
+        }
+    })
 }
 
 export async function logout() {

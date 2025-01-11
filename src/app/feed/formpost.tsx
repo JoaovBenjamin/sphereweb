@@ -3,6 +3,7 @@ import React from 'react'
 import { createPost } from '../actions/post-actions'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
+import { UserType } from '@/types/User'
 
 export default function FormPost() {
   
@@ -13,10 +14,10 @@ export default function FormPost() {
     return (
     <>
         <form action={handleSubmit} className='flex items-end gap-2'>
-            <div className='flex-grow'>
+        <div className='flex-grow'>
                 <Textarea name='text' id='text' placeholder='O que você está pensando?' />
-            </div>
-            <Button type='submit'>Postar</Button>
+        </div>
+        <Button type='submit'>Postar</Button>
         </form>
     </>
   )

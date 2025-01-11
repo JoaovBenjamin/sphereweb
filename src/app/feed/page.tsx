@@ -7,7 +7,6 @@ import { Postpone } from 'next/dist/server/app-render/dynamic-rendering';
 import FormPost from './formpost';
 
 export default async function Home() {
-
   const posts = await getPost(0); 
 
   return (

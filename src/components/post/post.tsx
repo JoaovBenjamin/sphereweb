@@ -1,17 +1,10 @@
+import  {PostType}  from "@/types/Post";
 import moment from "moment";
 import 'moment/locale/pt-br';
 
-export interface Post {
-    id: number;
-    text: string;
-    user: {
-        name: string;
-        avatar: string;
-    };
-    createdAt: string;
-}
 
-export function Post({ post }: { post: Post }) {
+
+export function Post({ post }: { post: PostType }) {
     moment.locale('pt-br');
 
     return (
